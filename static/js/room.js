@@ -1,4 +1,4 @@
-const roomName = JSON.parse(document.getElementById('room_name').textContent);
+const roomName = JSON.parse($('#room_name').textContent);
 
 const chatSocket = new WebSocket(
     'ws://'
@@ -13,7 +13,7 @@ chatSocket.onmessage = function(e) {
     // JSON.parse() convert the JSON object back into the original object,
     // then examine and act upon its contents.
     const data = JSON.parse(e.data);
-    document.querySelector('#chat-log').value += (data.message + '\n')
+    $('#chat-log').value += (data.message + '\n')
 };
 
 // on close - An event listener to be called when the connection is closed.
@@ -21,15 +21,15 @@ chatSocket.onclose = function(e) {
     console.error('Chat socket closed unexpectedly');
 };
 
-document.querySelector('#chat-message-input').focus();
-document.querySelector('#chat-message-input').onkeyup = function(e) {
+$('#chat-message-input').focus();
+$('#chat-message-input').keyup = function(e) {
     if (e.keyCode === 13) {
-        document.querySelector('#chat-message-submit').click();
+        $('#chat-message-submit').click();
     }
 };
 
-document.querySelector('#chat-message-submit').onclick = function(e) {
-    const messageInputDom = document.querySelector('#chat-message-input');
+$('#chat-message-submit').click = function(e) {
+    const messageInputDom = $('#chat-message-input');
     const message = messageInputDom.value;
 
     // Send the msg object as a JSON-formatted string
