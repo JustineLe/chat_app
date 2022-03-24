@@ -1,11 +1,6 @@
+{% extends 'base.html' %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Room</title>
-</head>
+{% block chat%}
 <body>
     What chat room would you like to enter?<br>
     <input type="text" id="room-name-input" size="100" placeholder="Enter your room name here!"><br>
@@ -13,3 +8,4 @@
 
     <script src="{% static 'js/index.js' %}"></script>
 </html>
+{% endblock %}

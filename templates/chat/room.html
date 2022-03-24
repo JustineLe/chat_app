@@ -1,11 +1,6 @@
+{% extends 'base.html' %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Room</title>
-</head>
+{% block chatroom %}
 <body>
     <textarea id="chat-log" cols="100" rows="20"></textarea><br>
     <input type="text" id="chat-message-input" size="100"><br>
@@ -15,3 +10,4 @@
     <script src="{% static 'js/room.js' %}"></script>
 </body>
 </html>
+{% endblock %}
