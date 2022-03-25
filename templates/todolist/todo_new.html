@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block todo_new %}
+<h1>Fill the form to add to the list</h1>
+<form action="/todo/addTodoItem/" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Deadline</label>
+        <input type="date" placeholder="Input deadline here!">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Content</label>
+        <textarea rows="3" placeholder="Type your todo here!"></textarea>
+    </div>
+    <input type="submit", value="Add Todo Item">
+</form>
+{% endblock %}

@@ -5,4 +5,4 @@ from .models import TodoListItem
 class UpdateTodoForm(forms.ModelForm):
     class Meta:
         model = TodoListItem
-        fields = '__all__'
+        fields = ['content', 'deadline']

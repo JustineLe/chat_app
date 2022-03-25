@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block todoall %}
+<h1>All my todo list</h1>
+<table>
+    {% for item in todoall %}
+    <tr>
+        <th>Content</th>
+        <th>Deadline</th>
+    </tr>
+    <tr>
+        <td>{{ item.content }}</td>
+        <td>{{ item.deadline }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
